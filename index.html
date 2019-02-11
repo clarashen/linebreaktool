@@ -1,1 +1,41 @@
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Line Break Tool</title>
+    </head>
+
+    <body>
+      <center>
+      <h2>Inserting line break tool</h2>
+            <textarea id="myText" 
+          rows="5" cols="33" placeholder="Paste your text here"></textarea>
+        
+        <p>Insert a line break at each:</p>
+    
+        <input type="text" id="delimiter" placeholder="Enter delimiter">
+
+        <button onclick="insertLineBreaks()">Insert Line Breaks</button>
+              
+        <p>Results:</p>
+
+      </center> 
+              <p id="result"></p>
+
+        <script>
+        function insertLineBreaks() {
+          var string = document.getElementById("myText").value;
+          var delimiter = document.getElementById('delimiter').value;
+          var list = string.split(delimiter);
+          for (var i = 0; i < list.length-1; i++){
+            list[i] += delimiter;
+          }
+          document.getElementById("result").innerHTML = list.join('<br>');
+        }
+    
+        </script>
+  
+
+    </body>
+
+</html>
